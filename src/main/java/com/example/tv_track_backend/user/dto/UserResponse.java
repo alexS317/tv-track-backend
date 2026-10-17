@@ -1,6 +1,8 @@
-package com.example.tv_track_backend.user;
+package com.example.tv_track_backend.user.dto;
 
 import java.time.Instant;
+
+import com.example.tv_track_backend.user.User;
 
 public record UserResponse(
         Long id,

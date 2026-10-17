@@ -14,7 +14,7 @@ import com.example.tv_track_backend.auth.dto.LoginRequest;
 import com.example.tv_track_backend.auth.dto.RegisterRequest;
 import com.example.tv_track_backend.user.User;
 import com.example.tv_track_backend.user.UserRepository;
-import com.example.tv_track_backend.user.UserResponse;
+import com.example.tv_track_backend.user.dto.UserResponse;
 
 @Service
 public class AuthService {
