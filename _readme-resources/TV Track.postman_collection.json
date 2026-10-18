@@ -1,0 +1,339 @@
+{
+  "info": {
+    "_postman_id": "a977a82f-9add-4d50-9f1a-9353b6a20f17",
+    "name": "TV Track",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "57101688",
+    "_collection_link": "https://go.postman.co/collection/57101688-a977a82f-9add-4d50-9f1a-9353b6a20f17?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "auth",
+      "item": [
+        {
+          "name": "register",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"John Smith\",\r\n    \"email\": \"john.smith@example.com\",\r\n    \"password\": \"password\",\r\n    \"passwordConfirmation\": \"password\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/auth/register",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "login",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"john.smith@example.com\",\r\n    \"password\": \"password\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/auth/login",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "shows",
+      "item": [
+        {
+          "name": "shows",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/shows",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "shows"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "shows",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"tvmazeId\": 27344\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/shows",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "shows"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "shows/{id}",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/shows/{{show_id}}",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "shows",
+                "{{show_id}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "shows/{id}",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"status\": \"WATCHING\",\r\n    \"personalRating\": null,\r\n    \"startedWatching\": \"2026-10-02\",\r\n    \"finishedWatching\": null,\r\n    \"currentEpisodeId\": 1790684\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/shows/{{show_id}}",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "shows",
+                "{{show_id}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "shows/{id}",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/shows/{{show_id}}",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "shows",
+                "{{show_id}}"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "user",
+      "item": [
+        {
+          "name": "user",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/user",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "user"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "user",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Johnny Smith\",\r\n    \"email\": \"john.smith@example.com\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/user",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "user"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "user/password",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"currentPassword\": \"password\",\r\n    \"newPassword\": \"passwort\",\r\n    \"newPasswordConfirmation\": \"passwort\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/user/password",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "user",
+                "password"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "user",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/user",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "user"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "tvmaze-test",
+      "item": [
+        {
+          "name": "show",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://api.tvmaze.com/shows/{{tvmaze_id}}?embed=episodes",
+              "protocol": "https",
+              "host": [
+                "api",
+                "tvmaze",
+                "com"
+              ],
+              "path": [
+                "shows",
+                "{{tvmaze_id}}"
+              ],
+              "query": [
+                {
+                  "key": "embed",
+                  "value": "episodes"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{auth_token}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:8080/api/v1"
+    },
+    {
+      "key": "auth_token",
+      "value": ""
+    },
+    {
+      "key": "show_id",
+      "value": ""
+    },
+    {
+      "key": "tvmaze_id",
+      "value": ""
+    }
+  ]
+}
