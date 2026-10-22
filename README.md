@@ -107,6 +107,8 @@ Make sure you have the following installed:
 
 The project is a pure backend REST API, the frontend will be built in a separate project. When the development server is running, you can view the API documentation under: http://localhost:8080/swagger-ui/index.html (you may have to add /v3/api-docs in the explore input field if it isn't there by default)
 
+The PostreSQL database server is running in a Docker container, you can configure it in the compose.yaml file. It sets up a Docker volume as well so the data isn't lost when the container is stopped. You can also use a tool such as DBeaver to view the tables in a graphical interface.
+
 You can use a tool like Postman for testing. In the \_readme-resources folder you find a JSON file that contains the configuration for the Postman collection, which you can import into your account. You'll have to set up the variables in the collection accordingly. If you want to connect to a local frontend, you have to add its URL to the .env file.
 
 To authenticate your user, you copy the token value (which you'll receive in the response body after registering or logging in) into the auth_token field in the Variables section of the Postman collection. In this way, you won't have to manually add the authorization header on every request.
