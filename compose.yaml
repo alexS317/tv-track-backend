@@ -3,11 +3,11 @@ services:
     image: 'postgres:latest'
     container_name: tv-track-db
     environment:
-      - 'POSTGRES_DB=tv_track'
-      - 'POSTGRES_PASSWORD=secret'
-      - 'POSTGRES_USER=root'
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
     ports:
-      - '5432:5432'
+      - "${DB_PORT}:5432"
     volumes:
       - postgres_data:/var/lib/postgresql
 

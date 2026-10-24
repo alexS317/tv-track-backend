@@ -34,6 +34,11 @@ public class Show {
     @Column(name = "tvmaze_id", nullable = false, updatable = false)
     private Long tvmazeId;
 
+    @Column(nullable = false)
+    private String title;
+
+    private String coverImage;
+
     @Enumerated(EnumType.STRING)
     @JdbcType(value = PostgreSQLEnumJdbcType.class)
     private ShowStatus status;
@@ -42,6 +47,8 @@ public class Show {
     private LocalDate startedWatching;
     private LocalDate finishedWatching;
     private Long currentEpisodeId;
+    private Integer currentSeason;
+    private Integer currentEpisode;
 
     @CreatedDate
     @Column(name = "created_at", nullable = false, updatable = false)
@@ -54,9 +61,11 @@ public class Show {
     protected Show() {
     }
 
-    public Show(Long userId, Long tvmazeId) {
+    public Show(Long userId, Long tvmazeId, String title, String coverImage) {
         this.userId = userId;
         this.tvmazeId = tvmazeId;
+        this.title = title;
+        this.coverImage = coverImage;
         this.status = ShowStatus.PLANNED;
     }
 
@@ -70,6 +79,22 @@ public class Show {
 
     public Long getTvmazeId() {
         return tvmazeId;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getCoverImage() {
+        return coverImage;
+    }
+
+    public void setCoverImage(String coverImage) {
+        this.coverImage = coverImage;
     }
 
     public ShowStatus getStatus() {
@@ -110,6 +135,22 @@ public class Show {
 
     public void setCurrentEpisodeId(Long currentEpisodeId) {
         this.currentEpisodeId = currentEpisodeId;
+    }
+
+    public Integer getCurrentSeason() {
+        return currentSeason;
+    }
+
+    public void setCurrentSeason(Integer currentSeason) {
+        this.currentSeason = currentSeason;
+    }
+
+    public Integer getCurrentEpisode() {
+        return currentEpisode;
+    }
+
+    public void setCurrentEpisode(Integer currentEpisode) {
+        this.currentEpisode = currentEpisode;
     }
 
     public Instant getCreatedAt() {

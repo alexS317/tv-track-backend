@@ -4,7 +4,10 @@ import jakarta.validation.constraints.NotNull;
 
 public record CreateShowRequest(
         @NotNull
-        Long tvmazeId
+        Long tvmazeId,
+        @NotNull
+        String title,
+        String coverImage
         ) {
 
 }

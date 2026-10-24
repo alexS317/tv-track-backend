@@ -58,7 +58,7 @@ For the actual data, the project makes use of the [TVmaze API](https://www.tvmaz
 
 ### Built With
 
-- [![Spring][Spring.io]][Spring-url]
+- [![Spring Boot][Spring.io]][Spring-url]
 - [![PostgreSQL][Postgresql.org]][Postgresql-url]
 - [![Postman][Postman.com]][Postman-url]
 
@@ -85,7 +85,7 @@ Make sure you have the following installed:
    git clone https://github.com/alexS317/tv-track-backend.git
    cd tv-track-backend
    ```
-2. Copy the .env.example file, rename it to .env and generate a secret key to use for the JWT authentication (Node.js is used in this specific command, but there are other options)
+2. Copy the .env.example file, rename it to .env and generate a secret key to use for the JWT authentication (Node.js is used in this specific command, but there are other options). Also configure your database credentials
    ```sh
    node -e "console.log(require('crypto').randomBytes(32).toString('base64'))"
    ```
@@ -152,7 +152,7 @@ Optional features and improvements:
 
 <!-- Shields.io badges. You can a comprehensive list with many more badges at: https://github.com/inttter/md-badges -->
 
-[Spring.io]: https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white
+[Spring.io]: https://img.shields.io/badge/Spring%20Boot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white
 [Spring-url]: https://spring.io/
 [Postgresql.org]: https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white
 [Postgresql-url]: https://www.postgresql.org/

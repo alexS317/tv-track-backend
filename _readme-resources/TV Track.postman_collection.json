@@ -50,7 +50,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n    \"email\": \"john.smith@example.com\",\r\n    \"password\": \"password\"\r\n}",
+              "raw": "{\r\n    \"email\": \"jane.doe@example.com\",\r\n    \"password\": \"password\"\r\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -99,7 +99,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n    \"tvmazeId\": 27344\r\n}",
+              "raw": "{\r\n    \"tvmazeId\": 27344,\r\n    \"title\": \"Das Boot,\"\r\n    \"coverImage\": \"493/1232739.jpg\"\r\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -143,7 +143,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n    \"status\": \"WATCHING\",\r\n    \"personalRating\": null,\r\n    \"startedWatching\": \"2026-10-02\",\r\n    \"finishedWatching\": null,\r\n    \"currentEpisodeId\": 1790684\r\n}",
+              "raw": "{\r\n    \"status\": \"WATCHING\",\r\n    \"personalRating\": 8,\r\n    \"startedWatching\": \"2026-10-02\",\r\n    \"finishedWatching\": null,\r\n    \"currentEpisodeId\": 1790684,\r\n    \"currentSeason\": 2,\r\n    \"currentEpisode\": 1\r\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -321,7 +321,7 @@
   "variable": [
     {
       "key": "base_url",
-      "value": "http://localhost:8080/api/v1"
+      "value": ""
     },
     {
       "key": "auth_token",

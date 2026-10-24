@@ -36,9 +36,9 @@ public class ShowService {
         Show show = showRepository.save(
                 new Show(
                         userId,
-                        request.tvmazeId()
-                )
-        );
+                        request.tvmazeId(),
+                        request.title(),
+                        request.coverImage()));
 
         return show;
     }
@@ -57,6 +57,8 @@ public class ShowService {
         show.setStartedWatching(request.startedWatching());
         show.setFinishedWatching(request.finishedWatching());
         show.setCurrentEpisodeId(request.currentEpisodeId());
+        show.setCurrentSeason(request.currentSeason());
+        show.setCurrentEpisode(request.currentEpisode());
 
         return show;
     }
@@ -70,7 +72,6 @@ public class ShowService {
 
     private Show findShow(Long id, Long userId) {
         return showRepository.findByIdAndUserId(id, userId).orElseThrow(
-                () -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Show not found.")
-        );
+                () -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Show not found."));
     }
 }

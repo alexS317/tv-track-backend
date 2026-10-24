@@ -16,7 +16,9 @@ public record UpdateShowRequest(
         Integer personalRating,
         LocalDate startedWatching,
         LocalDate finishedWatching,
-        Long currentEpisodeId
+        Long currentEpisodeId,
+        Integer currentSeason,
+        Integer currentEpisode
         ) {
 
 }
