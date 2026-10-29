@@ -14,9 +14,11 @@ import com.example.tv_track_backend.show.dto.UpdateShowRequest;
 public class ShowService {
 
     private final ShowRepository showRepository;
+    private final ShowMapper showMapper;
 
-    ShowService(ShowRepository showRepository) {
+    ShowService(ShowRepository showRepository, ShowMapper showMapper) {
         this.showRepository = showRepository;
+        this.showMapper = showMapper;
     }
 
     public List<Show> getAllShows(Long userId) {
@@ -47,18 +49,16 @@ public class ShowService {
     public Show updateShow(Long id, Long userId, UpdateShowRequest request) {
         Show show = findShow(id, userId);
 
-        if (request.startedWatching() != null && request.finishedWatching() != null
-                && request.finishedWatching().isBefore(request.startedWatching())) {
+        if (request.startedWatching().isNull() && request.finishedWatching().isNonNull()) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "You cannot have a finish date without a start date.");
+        }
+
+        if (request.startedWatching().isNonNull() && request.finishedWatching().isNonNull()
+                && request.finishedWatching().get().isBefore(request.startedWatching().get())) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Finish date must be after start date.");
         }
 
-        show.setStatus(request.status());
-        show.setPersonalRating(request.personalRating());
-        show.setStartedWatching(request.startedWatching());
-        show.setFinishedWatching(request.finishedWatching());
-        show.setCurrentEpisodeId(request.currentEpisodeId());
-        show.setCurrentSeason(request.currentSeason());
-        show.setCurrentEpisode(request.currentEpisode());
+        showMapper.updateShow(request, show);
 
         return show;
     }
